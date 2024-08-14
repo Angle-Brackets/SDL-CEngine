@@ -12,7 +12,7 @@ void render_init(u32 width, u32 height, Render_Flags flags) {
     SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "2");
 
     if(SDL_Init(SDL_INIT_EVERYTHING) < 0){
-        ERROR_EXIT("Could not initialize SDL!\nError: %s", SDL_GetError())
+        WARN("Could not initialize everything for SDL!\nError: %s", SDL_GetError())
     }
 
     global.render.width = width;

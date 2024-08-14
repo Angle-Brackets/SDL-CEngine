@@ -123,6 +123,8 @@ void draw() {
 i32 main(){
     initialize(WIDTH, HEIGHT, WIDTH, HEIGHT, 120, 15, 1, MULTITHREADING_ENABLED | BITMAP_ACTIVE | IGNORE_FOCUS, 0, draw);
     circles = (struct Circle*)malloc(sizeof(struct Circle) * circle_capacity);
+    PIX_Font* font = get_default_font();
+    set_default_font(font);
 
     for (i32 i = 0; i < circle_num; i++) {
         circles[i].r = random() % 100;

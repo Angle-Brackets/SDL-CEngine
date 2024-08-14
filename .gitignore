@@ -1,5 +1,6 @@
 .idea/
 .DS_Store
+.vscode/
 cmake-build-debug/
 clang-builds/
 demo_imgs/
@@ -8,4 +9,5 @@ glad/
 assets/
 include/CMakeFiles/
 clang-builds
+build/
 *.mp3

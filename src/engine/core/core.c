@@ -85,8 +85,13 @@ i32 initialize(u32 window_width, u32 window_height, u32 bitmap_width, u32 bitmap
     init_input();
     //Initialize Sounds
     volume = volume > 100 ? 100 : volume;
+
     if(init_mixer(sound_flags, volume) != 0){
+        #ifdef __linux__
+        WARN("Unable to initialize SDL_Mixer. This is likely due to you not having the Pulse Audio libraries installed. Install them with apt-get install libasound2-dev libpulse-dev and then do a clean install of Pixelinator.")
+        #else
         return 1;
+        #endif
     }
 
     //Initialize Controllers
